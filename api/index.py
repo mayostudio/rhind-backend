@@ -107,7 +107,7 @@ class Transaction(Base):
     date = Column(String)
 
 # Create tables in Supabase
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
 # ==================== FastAPI Setup ====================
 app = FastAPI()
