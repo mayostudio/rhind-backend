@@ -1,5 +1,27 @@
+import os
 from fastapi import FastAPI, Depends
 from sqlalchemy import create_engine, Column, Integer, String, Float, Boolean
+from sqlalchemy.orm import declarative_base, sessionmaker, Session
+from sqlalchemy.pool import NullPool
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+from typing import List, Optional
+from datetime import datetime
+import calendar
+
+SQLALCHEMY_DATABASE_URL = os.environ["DATABASE_URL"]
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    poolclass=NullPool,
+    connect_args={"timeout": 10},
+)    SQLALCHEMY_DATABASE_URL,
+    poolclass=NullPool,
+    connect_args={"timeout": 10},
+)(
+    SQLALCHEMY_DATABASE_URL,
+    poolclass=NullPool,
+    connect_args={"timeout": 10},
+), Column, Integer, String, Float, Boolean
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
